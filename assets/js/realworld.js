@@ -107,7 +107,10 @@ function validateForm() {
   }
 }
 myNameInput.addEventListener('keyup', validateName);
-myEmailInput.addEventListener('keyup', validateEmail);
+myEmailInput.addEventListener('keyup', () => {
+  validateForm();
+});
+
 myAgeInput.addEventListener('keyup', validateAge);
 
 submitButton.addEventListener('click', (e) => {
