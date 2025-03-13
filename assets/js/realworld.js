@@ -8,15 +8,33 @@ nej
 const myAnsverInput = document.getElementById('answerOne');
 const myAnsverButton = document.getElementById('answerButton');
 const myAnsverFeedbackElement = document.getElementById('answerFeedback');
-const correctAnswer = 'false';
-let myAnswer = myAnsverInput.value;
+const correctAnswer1 = 'false';
+const correctAnswer2 = 'disney';
 
+// myAnsverButton.addEventListener('click', (e) => {
+//   e.preventDefault();
+
+//   if (myAnswer === correctAnswer) {
+//     alert('du har svarret rigtigt');
+//     myAnsverFeedbackElement.textContent = 'Korrekt svar!';
+//   } else {
+//     alert('du har svarret forkert');
+//     myAnsverFeedbackElement.textContent = 'Forkert svar!';
+//   }
+// });
+//   let myAnswer = myAnsverInput.value;
+// });
+
+/*Opgave 2: udkommenter opgave 1, og omskriv nu din funktion til to korrekte svar:
+nej
+ja i disney film
+*/
 myAnsverButton.addEventListener('click', (e) => {
   e.preventDefault();
+  let myAnswer = myAnsverInput.value;
+  console.log('user answer', myAnswer);
 
-  let myAnswer = myAnsverInput.value; // Move this line inside the event listener to get the updated value
-
-  if (myAnswer === correctAnswer) {
+  if (myAnswer === correctAnswer1 || myAnswer === correctAnswer2) {
     alert('du har svarret rigtigt');
     myAnsverFeedbackElement.textContent = 'Korrekt svar!';
   } else {
@@ -24,12 +42,6 @@ myAnsverButton.addEventListener('click', (e) => {
     myAnsverFeedbackElement.textContent = 'Forkert svar!';
   }
 });
-
-/*Opgave 2: udkommenter opgave 1, og omskriv nu din funktion til to korrekte svar:
-nej
-ja i disney film
-*/
-
 /*opgave 3: skriv en kode der valider formen med følgende elementer: (denne opgave er på extreme niveau) 
 
 - korrekt e-mail type. brug funktionen "validateEmail(minEmail) til at checke en string med den indtastede email
