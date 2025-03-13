@@ -8,24 +8,21 @@ nej
 const myAnsverInput = document.getElementById('answerOne');
 const myAnsverButton = document.getElementById('answerButton');
 const myAnsverFeedbackElement = document.getElementById('answerFeedback');
+const correctAnswer = 'false';
+let myAnswer = myAnsverInput.value;
 
 myAnsverButton.addEventListener('click', (e) => {
   e.preventDefault();
 
-  /* din kode her. Skriv en alert der skriver "du har svarret rigtigt" hvis svarret er true
-  og "du har svarret forkert" hvis svaret er false*/
-  if (myAnsverInput === 'ja') {
-    alert('du har svarret rigtigt');
-    myAnsverFeedbackElement.textContent = 'du har svarret rigtigt';
-  } else myAnsverInput !== 'ja';
-  {
-    alert('du har svarret forkert');
-    myAnsverFeedbackElement.textContent = 'du har svarret forkert';
-  }
+  let myAnswer = myAnsverInput.value; // Move this line inside the event listener to get the updated value
 
-  let myAnswer = myAnsverInput.value;
-  // console.log('Answer is: ' + myAnswer);
-  console.log('Answer is: ' + myAnswer);
+  if (myAnswer === correctAnswer) {
+    alert('du har svarret rigtigt');
+    myAnsverFeedbackElement.textContent = 'Korrekt svar!';
+  } else {
+    alert('du har svarret forkert');
+    myAnsverFeedbackElement.textContent = 'Forkert svar!';
+  }
 });
 
 /*Opgave 2: udkommenter opgave 1, og omskriv nu din funktion til to korrekte svar:
