@@ -12,6 +12,9 @@ if (A === B || A === D) {
 }
 
 //opgave 2: skrive en If then statement der bliver TRUE når  A er større end B og A er mindre end E.
+if (A > B && A < E) {
+  console.log('statement TRUE!');
+}
 
 //opgave 3: Skriv en If then statement med  && og  || der kun er sand når alle expressions er sande.
 
