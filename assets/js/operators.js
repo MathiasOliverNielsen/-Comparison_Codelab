@@ -31,3 +31,8 @@ if ((A > B && A < E) || A === D) {
   console.log('statement TRUE!');
 }
 //opgave 4: Skriv en If then statement der kan finde ud af om F er "undefined" eller har en værdi, ved at bruge !.
+if (!F) {
+  console.log('F is undefined');
+} else {
+  console.log('F is defined');
+}
