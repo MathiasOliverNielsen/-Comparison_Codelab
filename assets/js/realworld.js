@@ -55,7 +55,7 @@ myAnsverButton.addEventListener('click', (e) => {
 //   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 //   return re.test(String(email).toLowerCase());
 // }
-
+// bider over lidt mere end jeg kan: dette er bare mere eller mere mig der leger med copolit haha
 function validateEmail(email) {
   const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return re.test(String(email).toLowerCase());
