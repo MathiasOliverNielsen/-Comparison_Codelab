@@ -1,12 +1,9 @@
-
 /* du må både ændre koden her, og i din HTML, hvis det er nødvendigt.. */
-
 
 /*Opgave 1: skriv en validering af svar i koden herunder. resultatet skal vises i myAnsverFeedbackElement når bruger trykker på myAnsverButton .
 der et korrekte svar:
 nej 
 */
-
 
 const myAnsverInput = document.getElementById('answerOne');
 const myAnsverButton = document.getElementById('answerButton');
@@ -14,9 +11,20 @@ const myAnsverFeedbackElement = document.getElementById('answerFeedback');
 
 myAnsverButton.addEventListener('click', (e) => {
   e.preventDefault();
+
   /* din kode her. Skriv en alert der skriver "du har svarret rigtigt" hvis svarret er true
   og "du har svarret forkert" hvis svaret er false*/
+  if (myAnsverInput === 'ja') {
+    alert('du har svarret rigtigt');
+    myAnsverFeedbackElement.textContent = 'du har svarret rigtigt';
+  } else myAnsverInput !== 'ja';
+  {
+    alert('du har svarret forkert');
+    myAnsverFeedbackElement.textContent = 'du har svarret forkert';
+  }
+
   let myAnswer = myAnsverInput.value;
+  // console.log('Answer is: ' + myAnswer);
   console.log('Answer is: ' + myAnswer);
 });
 
@@ -25,7 +33,6 @@ nej
 ja i disney film
 */
 
-
 /*opgave 3: skriv en kode der valider formen med følgende elementer: (denne opgave er på extreme niveau) 
 
 - korrekt e-mail type. brug funktionen "validateEmail(minEmail) til at checke en string med den indtastede email
@@ -33,13 +40,6 @@ ja i disney film
 - alder skal være større end 12.
  du må gerne bare consol.logge de forskellige tests i konsollen, men hvis du kan må du gerne lave feedback i elementet formValideringResult.
 */
-
-
-
-
-
-
-
 
 /* helper functions*/
 function validateEmail(email) {
