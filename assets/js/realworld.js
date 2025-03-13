@@ -51,10 +51,69 @@ myAnsverButton.addEventListener('click', (e) => {
 */
 
 /* helper functions*/
+// function validateEmail(email) {
+//   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//   return re.test(String(email).toLowerCase());
+// }
+
 function validateEmail(email) {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return re.test(String(email).toLowerCase());
 }
+
+const myNameInput = document.getElementById('myName');
+const myEmailInput = document.getElementById('myEmail');
+const myAgeInput = document.getElementById('myAge');
+const submitButton = document.getElementById('submitButton');
+const formValideringResult = document.getElementById('formValideringResult');
+
+function validateForm() {
+  let nameValid = false;
+  let emailValid = false;
+  let ageValid = false;
+}
+function validateName() {
+  if (myNameInput.value.length > 3) {
+    nameValid = true;
+    console.log('name is valid');
+  } else {
+    nameValid = false;
+    console.log('name is invalid');
+  }
+}
+function validateEmail() {
+  if (validateEmail(myEmailInput.value)) {
+    emailValid = true;
+    console.log('email is valid');
+  } else {
+    emailValid = false;
+    console.log('email is invalid');
+  }
+}
+function validateAge() {
+  if (myAgeInput.value > 12) {
+    ageValid = true;
+    console.log('age is valid');
+  } else {
+    ageValid = false;
+    console.log('age is invalid');
+  }
+}
+function validateForm() {
+  if (nameValid && emailValid && ageValid) {
+    formValideringResult.textContent = 'Form is valid';
+  } else {
+    formValideringResult.textContent = 'Form is invalid';
+  }
+}
+myNameInput.addEventListener('keyup', validateName);
+myEmailInput.addEventListener('keyup', validateEmail);
+myAgeInput.addEventListener('keyup', validateAge);
+
+submitButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  validateForm();
+});
 
 /* eks på kald:
 if (validateEmail("test@example.com")) {
